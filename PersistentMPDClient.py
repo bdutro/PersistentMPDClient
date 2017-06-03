@@ -22,10 +22,11 @@ class PersistentMPDClient(mpd.MPDClient):
                 if hasattr(super(PersistentMPDClient, self), cmd):
                     super_fun = super(PersistentMPDClient, self).__getattribute__(cmd)
                     new_fun = self.try_cmd(super_fun)
-                    print("Setting interceptor for {}".format(cmd))
+#                    print("Setting interceptor for {}".format(cmd))
                     setattr(self, cmd, new_fun)
                 else:
-                    print("Attr {} not available!".format(cmd))
+#                    print("Attr {} not available!".format(cmd))
+                    pass
 
     # create a wrapper for a function (such as an MPDClient
     # member function) that will verify a connection (and
